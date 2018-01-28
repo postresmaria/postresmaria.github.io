@@ -1,0 +1,36 @@
+section.home {
+    background: url('../img/home-bg.jpeg') no-repeat;
+    background-position: center bottom;
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    height: 500px;
+    @media (max-width: 768px){
+        background-position: center center;
+    }
+    .flex {
+        align-items: center;
+    }
+    .col-2 {
+        text-align: center;
+        width: 100%;
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h2 {
+            width: 95%;
+            font-size: 5rem;
+            margin: 0 auto;
+            position: relative;
+            font-family: 'Lobster', $main-font, sans-serif;
+            letter-spacing: 5px;
+        }
+        p {
+            font-size: 1.25rem;
+            letter-spacing: 2px;
+            font-family: 'Lobster', $main-font, sans-serif;
+        }
+    }
+}

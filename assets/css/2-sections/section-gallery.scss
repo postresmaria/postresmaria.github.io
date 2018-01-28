@@ -1,0 +1,125 @@
+section.gallery#gallery {
+    position: relative;
+    background: #3D96CB;
+    padding: 0;
+    color: white;
+    min-height: auto;
+    .col-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        p {
+            font-size: 1rem;
+            letter-spacing: 1px;
+            @media (max-width: 640px){
+                text-align: center;
+                margin: 1rem 0 1rem 0;
+            }
+        }
+        a.btn {
+            box-shadow: 0px 0px 10px 1px rgba(66, 66, 66, 0.5);
+            padding: .5rem 0;
+            color: #3D96CB;
+            background: white;
+            transition: all 100ms ease-in-out;
+            width: 100%;
+            text-align: center;
+            &:hover {
+                cursor: pointer;
+                box-shadow: 0px 0px 10px 2px rgba(66, 66, 66, 0.5);
+            }
+            @media (max-width: 640px){
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .recipes-wrapper {
+        width: 100%;
+        &::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+        .recipe-thumb {
+            display: block;
+            background-size: cover;
+            background-position: center center;
+            width: 25%;
+            float: left;
+            position: relative;
+            opacity: 0;
+            transition: all 300ms ease-in-out;
+            &.is-visible{
+                opacity: 1;
+            }
+            &.is-tada{
+                animation: tada;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                z-index: 1;
+            }
+            &:after {
+                content: '';
+                display: block;
+                padding-top: 100%;
+            }
+            overflow: hidden;
+            &:hover {
+                .info-wrapper {
+                    opacity: 1;
+                    transform: translate(0%, 0%) scale(1);
+                }
+            }
+            .info-wrapper {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: fade-out(#FF3366, 0.3);
+                transform: translate(0%, 100%) scale(0.5);
+                transition: all 200ms ease-in-out;
+                opacity: 1;
+                .info-name {
+                    font-size: .9rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:999px) and (min-width:640px) {
+    .recipe-thumb {
+        width: 33.33% !important;
+    }
+}
+
+@keyframes tada {
+    from {
+        transform: scale3d(1, 1, 1);
+    }
+    10%,
+    20% {
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    }
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    }
+    40%,
+    60%,
+    80% {
+        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    }
+    to {
+        transform: scale3d(1, 1, 1);
+    }
+}
