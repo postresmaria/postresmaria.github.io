@@ -611,7 +611,7 @@ section.about#about {
       width: 100%;
       height: auto;
       position: absolute;
-      top: 50%;
+      top: 60%;
       -webkit-transform: translateY(-50%);
               transform: translateY(-50%);
       left: 0; }
