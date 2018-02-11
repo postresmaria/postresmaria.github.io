@@ -1,0 +1,17 @@
+@import "0-tools/normalize";
+
+@import "1-base/vars";
+@import "1-base/base";
+
+@import "3-components/mixins";
+
+@import "2-sections/header";
+@import "2-sections/section-home";
+@import "2-sections/section-about";
+@import "2-sections/section-gallery";
+@import "2-sections/section-footer";
+@import "2-sections/section-contact";
+@import "2-sections/gallery";
+@import "2-sections/posts";
+
+@import "4-layouts/home";

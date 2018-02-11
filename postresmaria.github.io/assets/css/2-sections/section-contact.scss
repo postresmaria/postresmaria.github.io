@@ -1,0 +1,27 @@
+section.contact#contact{
+    form{
+        width: 100%;
+        input, textarea{
+            width: 100%;
+            padding: .5rem 1rem;
+            border: 1px solid #424242;
+            background: transparent;
+            border-radius: 5px;
+            font-family: $main-font;
+            font-size: .9rem;
+            color: #424242;
+            margin-bottom: .75rem;
+            outline:none;
+        }
+        input[type="submit"]{
+            max-width: 100%;
+            margin: 0 0 0 auto;
+            transition: all 300ms ease-in-out;
+            &:hover{
+                background: #424242;
+                color: white;
+                cursor: pointer;
+            }
+        }
+    }
+}

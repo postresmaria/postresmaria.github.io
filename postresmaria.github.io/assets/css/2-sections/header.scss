@@ -1,0 +1,173 @@
+.home-wrap .header {
+    width: 135px;
+    background: white;
+    padding: 1.8rem 0;
+    .header-position {
+        width: 135px;
+        position: fixed;
+        top: 30px;
+        bottom: 30px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .logo {
+        @include text-hide();
+        background: url('../img/jelly.svg') no-repeat center;
+        background-size: contain;
+        height: 80px;
+        padding: 0;
+        margin: 0;
+        width: 135px;
+    }
+    .site-nav {
+        ul {
+            list-style: none;
+            margin: 20px 0;
+            padding: 0 20px 0 0;
+            text-align: right;
+            li {
+                margin-bottom: .75rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                a {
+                    color: black;
+                    transition: color 400ms ease-in-out;
+                    &:hover {
+                        color: rgba(#1789FC, 0.75);
+                    }
+                }
+                a.is-active {
+                    position: relative;
+                    color: #1789FC;
+                }
+            }
+        }
+        .arrow {
+            content: "";
+            opacity:0;
+            width: 0;
+            height: 0;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            border-right: 8px solid #1789FC;
+            position: absolute;
+            top: 50%;
+            right: 5px;
+        }
+    }
+    .email-link {
+        display: block;
+        text-align: right;
+        padding-right: 20px;
+        transition: all 300ms ease-in-out;
+        &:hover {
+            color: #1789FC;
+        }
+    }
+    .mobile-nav-toggle {
+        width: 30px;
+        height: 30px;
+        margin-right: 1.25rem;
+        display: none;
+        align-items: center;
+        cursor: pointer;
+        span,
+        span:after,
+        span:before {
+            content: "";
+            height: 2px;
+            display: block;
+            background: #333;
+            width: 100%;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+        }
+        span:after {
+            top: -12px;
+        }
+        span:before {
+            top: 10px;
+        }
+        &.is-open {
+            span {
+                background: transparent;
+            }
+            span:before,
+            span:after {
+                transform-origin: center;
+                transform: rotate(45deg);
+                top: 0;
+            }
+            span:before {
+                transform: rotate(-45deg);
+                top: 2px;
+            }
+        }
+    }
+}
+
+.home-wrap {
+    .mobile-nav {
+        display: none;
+        position: absolute;
+        width: 100%;
+        background: white;
+        padding: 30px 0 20px;
+        margin-top: 4rem;
+        top: 0;
+        left: 0;
+        transition: all 0.3s linear;
+        transform: translateY(-100%);
+        z-index: 1;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            text-align: center;
+            margin-bottom: 10px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 775px) {
+    .home-wrap .header {
+        width: auto;
+        padding: 1rem 0;
+        .header-position {
+            width: auto;
+            position: relative;
+            top: auto;
+            bottom: auto;
+            left: auto;
+            flex-direction: row;
+            align-items: center;
+        }
+        .site-nav,
+        .email-link {
+            display: none;
+        }
+        .logo {
+            height: 50px;
+            width: 90px;
+        }
+        .mobile-nav-toggle {
+            display: flex;
+        }
+    }
+    .home-wrap {
+        .mobile-nav {
+            &.is-open {
+                display: block;
+                transform: translateY(0%);
+            }
+        }
+    }
+}

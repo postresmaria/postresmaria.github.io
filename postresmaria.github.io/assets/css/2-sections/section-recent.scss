@@ -1,0 +1,59 @@
+section.recent#recent {
+    position: relative;
+    background: url('../img/recent-bg.jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 0;
+    min-height: auto;
+    .col-1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .recipes-wrapper {
+        width: 100%;
+        &::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+        .recipe-thumb {
+            display: block;
+            background-size: cover;
+            background-position: center center;
+            width: 50%;
+            float: left;
+            position: relative;
+            &:after {
+                content: '';
+                display: block;
+                padding-top: 100%;
+            }
+            overflow: hidden;
+            &:hover {
+                .info-wrapper {
+                    opacity: 1;
+                    transform: translate(0%, 0%) scale(1);
+                }
+            }
+            .info-wrapper {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: fade-out(#3D96CB, 0.3);
+                transform: translate(0%, 100%) scale(0.5);
+                transition: all 200ms ease-in-out;
+                opacity: 1;
+                .info-name {
+                    font-size: .9rem;
+                }
+            }
+        }
+    }
+}

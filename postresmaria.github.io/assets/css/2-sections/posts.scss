@@ -1,0 +1,51 @@
+h1{text-align: center;}
+.container-dessert{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .description{
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        font-style: italic;
+        text-align: center;
+        p{
+            display: inline;
+        }
+    }
+    .img{
+        width: 50%;
+        position: relative;
+        >div{
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            transform: scale(.9);
+        }
+        &:after{
+            content: "";
+            display: block;
+            position: relative;
+            padding-top: 100%;
+        }
+    }
+}
+@media (max-width:768px){
+    .container-dessert{
+        flex-direction: column;
+        .img, .description{
+            width: 100%;
+        }
+    }
+}
